@@ -1,1 +1,5 @@
 rails generate controller Messages
+get '/messages' => 'messages#index'
+def index
+  @messages = Message.all
+end
