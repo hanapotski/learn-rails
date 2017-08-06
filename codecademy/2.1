@@ -1,0 +1,14 @@
+Request/Response Cycle
+
+When you type http://localhost:8000/welcome, the browser makes a request for the URL /welcome.
+The request hits the Rails router.
+The router maps the URL to a controller action to handle the request.
+The controller action recieves the request, and asks the model to fetch data from the database.
+The model returns data to the controller action.
+The controller action passes the data on to the view.
+The view renders the page as HTML.
+The controller sends the HTML back to the browser.
+
+rails new MessengerApp
+bundle install
+http://localhost:8000
