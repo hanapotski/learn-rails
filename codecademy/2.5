@@ -1,2 +1,6 @@
 # Method "URL" => "Controller#Action"
 get 'messages/new' => 'messages#new'
+
+def new
+    @message = Message.new
+  end
