@@ -1,0 +1,10 @@
+When you visit http://localhost:8000/messages/new to create a new message, it triggers the first turn of the request/response cycle:
+
+The browser makes a HTTP GET request for the URL /messages/new.
+The Rails router maps this URL to the Messages controller's new action. The new action creates a new Message object @message and passes it on to the view in app/views/messages/new.html.erb.
+In the view, form_for creates a form with the fields of the @message object.
+Then when you fill out the form and press Create, it triggers the second turn of the request/response cycle:
+
+The browser sends the data to the Rails app via an HTTP POST request to the URL /messages.
+This time, the Rails router maps this URL to the create action.
+The create action uses the message_params method to safely collect data from the form and update the database.
